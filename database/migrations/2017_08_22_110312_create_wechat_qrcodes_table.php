@@ -19,7 +19,7 @@ class CreateWechatQrcodesTable extends Migration
             $table->string('type', 16)->nullable()->comment('如 custom/referral/...');
             $table->string('name', 64)->comment('管理员标题');
             $table->string('code')->comment('二维码内容');
-            $table->jsonb('settings')->nullable();
+            $table->jsonb('data')->nullable();
             $table->timestamp('expires_at')->nullable()->comment('临时二维码过期时间');
             $table->timestamps();
             $table->softDeletes();

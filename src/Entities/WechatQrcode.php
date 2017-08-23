@@ -26,7 +26,7 @@ class WechatQrcode extends Model
         'type',
         'name',
         'code',
-        'settings',
+        'data',
         'expires_at',
     ];
 
@@ -49,7 +49,7 @@ class WechatQrcode extends Model
      * cast attributes
      */
     protected $casts = [
-        'settings' => 'object',
+        'data' => 'object',
     ];
 
     /**
@@ -58,7 +58,7 @@ class WechatQrcode extends Model
      *
      * @var array
      */
-    protected $default_settings = [
+    protected $default_data = [
         //
     ];
 }
