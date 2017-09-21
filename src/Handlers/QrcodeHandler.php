@@ -9,16 +9,21 @@ class QrcodeHandler
     /**
      * temporary
      * 
-     * @param  mixed  $scene
+     * @param  string  $category_id
+     * @param  string  $name
      * @param  integer  $expireSeconds
      * @return WechatQrcode
      */
-    public function temporary($scene, $expireSeconds = null)
+    public function temporary($category_id, $name, $expireSeconds = null)
     {
-        $result = app()->wechat->qrcode->temporary($scene, $expireSeconds);
-        $expireSeconds = $result->expire_seconds;
         $qrcode = WechatQrcode::create([
-            'name' => 'new qrcode',
+            'category_id' => $category_id,
+            'name' => $name,
+            'code' => 'waiting...',
+            'expires_at' => date('Y-m-d H:i:s'),
+        ]);
+        $result = app()->wechat->qrcode->temporary($qrcode->id, $expireSeconds);
+        $qrcode->update([
             'code' => $result->url,
             'expires_at' => date('Y-m-d H:i:s', time() + $result->expire_seconds),
             'data' => $result,
@@ -29,15 +34,22 @@ class QrcodeHandler
     /**
      * forever
      *
-     * @param  mixed  $scene
+     * @param  string  $category_id
+     * @param  string  $name
      * @return WechatQrcode
      */
-    public function forever($scene)
+    public function forever($category_id, $name)
     {
-        $result = app()->wechat->qrcode->forever($scene);
-        $expireSeconds = $result->expire_seconds;
         $qrcode = WechatQrcode::create([
-            'name' => 'new qrcode',
+            'category_id' => $category_id,
+            'name' => $name,
+            'code' => 'waiting...',
+
+            'code' => $result->url,
+            'data' => $result,
+        ]);
+        $result = app()->wechat->qrcode->forever($scene);
+        $qrcode->update([
             'code' => $result->url,
             'data' => $result,
         ]);
