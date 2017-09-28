@@ -17,7 +17,7 @@ class WechatQrcodeController extends Controller
     public function index(Request $request)
     {
         $query = WechatQrcode::orderBy('id', 'desc');
-        if ($request->has('category_id')) {
+        if ($request->input('category_id')) {
             $query->where('category_id', $request->input('category_id'));
         }
         return $query->get();
