@@ -1,0 +1,25 @@
+{
+    "name": "goodwong/laravel-wechat-qrcode",
+    "type": "library",
+    "authors": [
+        {
+            "name": "william",
+            "email": "goodwong@foxmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Goodwong\\LaravelWechatQrcode\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Goodwong\\LaravelWechatQrcode\\WechatQrcodeServiceProvider"
+            ]
+        }
+    }
+}
