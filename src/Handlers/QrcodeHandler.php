@@ -24,8 +24,8 @@ class QrcodeHandler
         ]);
         $result = app()->wechat->qrcode->temporary($qrcode->id, $expireSeconds);
         $qrcode->update([
-            'code' => $result->url,
             'expires_at' => date('Y-m-d H:i:s', time() + $result->expire_seconds),
+            'code' => $result->url,
             'data' => $result,
         ]);
         return $qrcode;
@@ -44,11 +44,8 @@ class QrcodeHandler
             'category_id' => $category_id,
             'name' => $name,
             'code' => 'waiting...',
-
-            'code' => $result->url,
-            'data' => $result,
         ]);
-        $result = app()->wechat->qrcode->forever($scene);
+        $result = app()->wechat->qrcode->forever($qrcode->id);
         $qrcode->update([
             'code' => $result->url,
             'data' => $result,
