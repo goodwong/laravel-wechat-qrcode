@@ -14,7 +14,7 @@ class QrcodeHandler
      * @param  integer  $expireSeconds
      * @return WechatQrcode
      */
-    public function temporary($category_id, $name, $expireSeconds = null)
+    public function temporary($category_id, $name, $expireSeconds = 30 * 24 * 3600)
     {
         $qrcode = WechatQrcode::create([
             'category_id' => $category_id,
