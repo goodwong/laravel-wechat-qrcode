@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelWechatQrcode;
+namespace Goodwong\WechatQrcode;
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +13,7 @@ class Router
      */
     public static function qrcode()
     {
-        Route::namespace('Goodwong\LaravelWechatQrcode\Http\Controllers')->group(function () {
+        Route::namespace('Goodwong\WechatQrcode\Http\Controllers')->group(function () {
             Route::resource('wechat-qrcodes', 'WechatQrcodeController');
         });
     }

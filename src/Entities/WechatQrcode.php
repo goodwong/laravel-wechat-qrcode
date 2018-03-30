@@ -1,10 +1,10 @@
 <?php
 
-namespace Goodwong\LaravelWechatQrcode\Entities;
+namespace Goodwong\WechatQrcode\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Goodwong\LaravelDefaultJsonField\Traits\DefaultJsonField;
+use Goodwong\DefaultJsonField\Traits\DefaultJsonField;
 
 class WechatQrcode extends Model
 {

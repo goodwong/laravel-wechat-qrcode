@@ -1,8 +1,8 @@
 <?php
 
-namespace Goodwong\LaravelWechatQrcode\Http\Controllers;
+namespace Goodwong\WechatQrcode\Http\Controllers;
 
-use Goodwong\LaravelWechatQrcode\Entities\WechatQrcode;
+use Goodwong\WechatQrcode\Entities\WechatQrcode;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -47,7 +47,7 @@ class WechatQrcodeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Goodwong\LaravelWechatQrcode\Entities\WechatQrcode  $wechatQrcode
+     * @param  \Goodwong\WechatQrcode\Entities\WechatQrcode  $wechatQrcode
      * @return \Illuminate\Http\Response
      */
     public function show(WechatQrcode $wechatQrcode)
@@ -58,7 +58,7 @@ class WechatQrcodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Goodwong\LaravelWechatQrcode\Entities\WechatQrcode  $wechatQrcode
+     * @param  \Goodwong\WechatQrcode\Entities\WechatQrcode  $wechatQrcode
      * @return \Illuminate\Http\Response
      */
     public function edit(WechatQrcode $wechatQrcode)
@@ -70,7 +70,7 @@ class WechatQrcodeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Goodwong\LaravelWechatQrcode\Entities\WechatQrcode  $wechatQrcode
+     * @param  \Goodwong\WechatQrcode\Entities\WechatQrcode  $wechatQrcode
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, WechatQrcode $wechatQrcode)
@@ -81,7 +81,7 @@ class WechatQrcodeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Goodwong\LaravelWechatQrcode\Entities\WechatQrcode  $wechatQrcode
+     * @param  \Goodwong\WechatQrcode\Entities\WechatQrcode  $wechatQrcode
      * @return \Illuminate\Http\Response
      */
     public function destroy(WechatQrcode $wechatQrcode)

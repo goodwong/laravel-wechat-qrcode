@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelWechatQrcode;
+namespace Goodwong\WechatQrcode;
 
 use Illuminate\Support\ServiceProvider;
 

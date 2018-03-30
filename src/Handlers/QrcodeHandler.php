@@ -1,8 +1,8 @@
 <?php
 
-namespace Goodwong\LaravelWechatQrcode\Handlers;
+namespace Goodwong\WechatQrcode\Handlers;
 
-use Goodwong\LaravelWechatQrcode\Entities\WechatQrcode;
+use Goodwong\WechatQrcode\Entities\WechatQrcode;
 
 class QrcodeHandler
 {
